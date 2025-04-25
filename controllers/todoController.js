@@ -1,9 +1,7 @@
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import todoModel from "../models/todoModel.js";
 
 async function getAll(req, res) {
-	const todos = await prisma.todo.findMany();
+	const todos = await todoModel.getAllTodos();
 	return res.json(todos);
 }
 
